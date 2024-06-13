@@ -161,7 +161,7 @@ impl<'de> de::Deserializer<'de> for Deserializer<'de> {
     where
         V: Visitor<'de>,
     {
-        Err(Error::ImpossibleDeserialization("map"))
+        _visitor.visit_str(self.input)
     }
 
     fn deserialize_struct<V>(
