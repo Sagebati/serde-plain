@@ -161,7 +161,7 @@ impl<'de> de::Deserializer<'de> for Deserializer<'de> {
     where
         V: Visitor<'de>,
     {
-        _visitor.visit_str(self.input)
+        _visitor.visit_string(self.input.to_string())
     }
 
     fn deserialize_struct<V>(
